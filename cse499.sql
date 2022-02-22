@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 15, 2022 at 06:19 PM
+-- Generation Time: Feb 22, 2022 at 12:49 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.26
 
@@ -122,7 +122,10 @@ INSERT INTO `blood` (`blood_id`, `name`, `blood_group`, `mobile`, `last_donate`,
 (1, 'abdur rahman kazi', 'B+', '01834920142', '18 feb 2022', 'Khilkhet, Dhaka-1229'),
 (2, 'sayed fahim', 'AB+', '01744555434', '21 March 2021', 'Khilkhet, Dhaka-1229'),
 (3, 'md tamim', 'B-', '01521210824', '08 april 2021', 'nikunjo, Dhaka-1229'),
-(4, 'afti era', 'O-', '01944555434', '12 june 2021', 'Assura, Dhaka-1229');
+(4, 'afti era', 'O-', '01944555434', '12 june 2021', 'Assura, Dhaka-1229'),
+(5, 'abdur rahman', 'A+', '01834920142', '12 feb 2021', 'khilher'),
+(6, 'abdur rahman', 'AB+', '01834920142', '12 feb 2021', 'dresye'),
+(7, 'abdur rahman', 'A+', '01834920142', '12 feb 2021', 'dresye');
 
 -- --------------------------------------------------------
 
@@ -134,16 +137,19 @@ CREATE TABLE `cart` (
   `cart_id` int(11) NOT NULL,
   `cmr_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL
+  `product_id` int(11) NOT NULL,
+  `type` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cart`
 --
 
-INSERT INTO `cart` (`cart_id`, `cmr_id`, `quantity`, `product_id`) VALUES
-(5, 1, 3, 1),
-(6, 1, 5, 2);
+INSERT INTO `cart` (`cart_id`, `cmr_id`, `quantity`, `product_id`, `type`) VALUES
+(5, 1, 2, 1, 0),
+(6, 1, 6, 2, 0),
+(7, 1, 6, 3, 0),
+(8, 1, 2, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -190,7 +196,8 @@ CREATE TABLE `customer` (
 INSERT INTO `customer` (`cus_id`, `f_name`, `l_name`, `avadar`, `email`, `username`, `gender`, `phone`, `password`) VALUES
 (1, 'fname', 'lname', '', 'kazi@gmail.com', 'a.rahmansravon', 'm', '23423434534', '123456'),
 (3, 'abdur rahman', 'kazi', '', 'kazi0099@gmail.com', 'a.rahmansravon', 'm', '4546546323', '123456'),
-(4, 'abdur rahman', 'abdur rahman', '', 'weet@gmail.com', 'kaziar42@gmail.com', 'm', '4546546323', '12345678');
+(4, 'abdur rahman', 'abdur rahman', '', 'weet@gmail.com', 'kaziar42@gmail.com', 'm', '4546546323', '12345678'),
+(5, 'gfdgds', 'singer', '', 'admin4@gmail.com', 'admin4', 'm', '5233453454', '123456');
 
 -- --------------------------------------------------------
 
@@ -577,13 +584,13 @@ ALTER TABLE `appoitment`
 -- AUTO_INCREMENT for table `blood`
 --
 ALTER TABLE `blood`
-  MODIFY `blood_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `blood_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -595,7 +602,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `cus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `cylinder`
