@@ -209,6 +209,29 @@ s0.parentNode.insertBefore(s1,s0);
       }
     });
 
+    //Add to Cart from oxyzen
+    $(document).on('click','.addtocartoxygen',function(){
+      var getid = $(this).attr('id');
+      var carttext = parseInt($('#cartcount').text());
+      
+      $.ajax({
+        url:"ajax/add_cartoxygen.php",
+        method:"POST",
+        data:{pid:getid},
+        success:function(data)
+        {
+          if (data == 1) {
+            alert("Added success in Cart");
+            $('#cartcount').text(carttext+1);
+          }else{
+            alert("Already added in Cart");
+          }
+          
+          
+        }
+      }); 
+    });
+
     //Add to Cart from medicine
     $(document).on('click','.addtocart',function(){
       var getid = $(this).attr('id');
@@ -246,7 +269,6 @@ s0.parentNode.insertBefore(s1,s0);
     function cartBackend(value,getPid,setquantity,price){
       var subtotal = 0
       var total = 0
-      
       $.ajax({
         url:"ajax/update_cart.php",
         method:"POST",
@@ -274,7 +296,8 @@ s0.parentNode.insertBefore(s1,s0);
       var getPid = $tr.attr("id");
       var value = parseInt($div.find("input").val())
       var price = parseInt($tr.find("td:nth-child(3)").text());
-      if(value!=0){
+
+      if(value != 0){
         cartBackend(value-1,getPid,getid,price)
       }
      

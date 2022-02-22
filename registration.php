@@ -64,7 +64,8 @@ if (isset($_SESSION['cuslogin'])) {
 <div class="col-md-5 border border-secondary rounded mb-1 p-3 mx-auto pt-5">
       <h4 class="text-center text-secondary p-3 bg-success rounded">Sign Up and Start Something!</h4>
       <div><?php if (isset($cutomerreg)) {
-          echo '<h5 class="text-danger">'.$cutomerreg.'</h5>';
+          // echo '<h5 class="text-danger">'.$cutomerreg.'</h5>';
+          header("Location: donation.php");
         } ?></div>
       <h6 class="text-success text-center"><?php if(isset($_GET['success'])) { echo "Registration Succesfull" ; } ?></h6>
       <form id="formSignup" method="post" action="">

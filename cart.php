@@ -34,7 +34,24 @@
     ?>
               <tr id="<?php echo $row['cart_id']; ?>">
                 <td><img width="80" src="images/<?php echo $row['image']; ?>"></td>
-                <td><?php echo $row['name']; ?></td>
+                <td><?php
+                        if(strlen($row['name']) > 10){
+                          $pieces = explode(" ", $row['name']);
+                          for ($i=0; $i < count($pieces); $i++) { 
+                            if($i === 2){
+                              echo "<br>".$pieces[$i];
+                            }elseif($i === 4){
+                              echo "<br>".$pieces[$i];
+                            }else{
+                              echo " ".$pieces[$i];
+                            }
+                          }
+                          //echo str_replace(" ","<br>",$pieces[2]);
+                        }else{
+                          echo $row['name'];
+                        } 
+                      ///echo strlen($row['name']); 
+                    ?></td>
                 <td><?php echo $row['price']; ?></td>
                 <td>
                   <div class="input-group main" id="<?php echo $row['cart_id']+1; ?>">

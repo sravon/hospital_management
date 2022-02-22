@@ -25,5 +25,21 @@ class Oxygen
 		return $fetchAll;
 	}
 
+	function insertIntoCart($pid,$cmrid, $quantity){
+		$sql ='SELECT * FROM cart WHERE cmr_id="'.$cmrid.'" AND product_id ="'.$pid.'" AND type=1';
+		$value = $this->db->select($sql);
+		if ($value) {
+			$msg = 0;
+		}else{
+			$sql ="insert into cart(cmr_id, quantity,product_id,type) 
+			value('".$cmrid."', '".$quantity."','".$pid."' ,1)";
+			$insert = $this->db->insert($sql);
+			if ($insert) {
+				$msg = 1;
+			}
+		}
+		return $msg;
+	}
+
 
 }

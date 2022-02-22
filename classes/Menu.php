@@ -14,7 +14,8 @@ class Menu
 	}
 	
 	function getAllCartItemBycusid($dd){ //retrieve all cart product by id
-		$sql ='SELECT * FROM medicine JOIN cart ON cart.product_id = medicine.medi_id WHERE cmr_id="'.$dd.'"';
+		$sql ="(SELECT cart_id,name,quantity,cylinder_price AS price ,img AS image FROM cylinder JOIN cart ON cart.product_id = cylinder.cylinder_id WHERE cmr_id='".$dd."' AND type=1) UNION
+(SELECT cart_id,name,quantity,price,image FROM medicine JOIN cart ON cart.product_id = medicine.medi_id WHERE cmr_id='".$dd."' AND type=0)";
 		$fetchAll = $this->db->select($sql);
 		return $fetchAll;
 	}

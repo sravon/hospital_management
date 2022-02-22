@@ -18,7 +18,7 @@
 							<h5 class="pl-2 pt-1 text-danger text-center" style="min-height: 50px">'.$row['name'].'</h5>
 							<h5 class="pl-2 text-center">Unit Price: '.$row['cylinder_price'].'</h5>
 							<div class="d-flex justify-content-between p-2">
-								<button class="btn btn-outline-warning mr-1 addtocart" id="'.$row['cylinder_id'].'">Add to Cart</button>
+								<button class="btn btn-outline-warning mr-1 addtocartoxygen" id="'.$row['cylinder_id'].'">Add to Cart</button>
 								<a href="checkout.php?singleprice='.$row['cylinder_price'].'&mediid='.$row['cylinder_id'].'" class="btn btn-outline-danger">Buy Now</a>
 							</div>
 						</div>
