@@ -42,8 +42,8 @@
 				    <tr>
 				      <th scope="row"><?php echo $i; ?></th>
 				      <td><?php echo $value['cylinder_name']; ?></td>
-				      <td><a href="?source=edit_pharmacy&phar_id=<?php echo $value['phar_id']; ?>" class="btn btn-primary">Edit</a></td>
-				      <td><a href="?delete_phar=<?php echo $value['phar_id']; ?>" class="btn btn-danger">Delete</a></td>
+				      <td><a href="?source=edit_cylinder&cylinder_id=<?php echo $value['type_id']; ?>" class="btn btn-primary">Edit</a></td>
+				      <td><a href="?delete_cylinder=<?php echo $value['type_id']; ?>" class="btn btn-danger">Delete</a></td>
 				    </tr>
 				<?php }} ?>
 			  	</tbody>
