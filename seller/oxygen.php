@@ -42,6 +42,10 @@
     					</select>
 					</div>
 					<div>
+						<label><b>Image :</b></label>
+						<input class="form-control" type="file" name="image" />
+					</div>	
+					<div>
 						<label><b>Price :</b></label>
 						<input class="form-control" type="text" name="price" />
 					</div>	

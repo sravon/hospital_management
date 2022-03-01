@@ -9,13 +9,7 @@
 	?>
 	<div class="row p-3">
 		<div class="col-md-6">
-			<h2 class="text-center text-primary p-4">
-				<?php 
-					if(isset($_GET['source']) == 'edit_pharmacy'){
-						echo 'Edit Pharmacy';
-					}else{
-						echo 'Add Pharmacy';
-					}
+			<h2 class="text-center text-primary p-4">Add Pharmacy
 				?>
 				
 			</h2>
