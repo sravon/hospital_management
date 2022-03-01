@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 22, 2022 at 12:49 PM
+-- Generation Time: Mar 01, 2022 at 05:40 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.26
 
@@ -222,7 +222,7 @@ INSERT INTO `cylinder` (`cylinder_id`, `name`, `cylinder_type`, `cylinder_price`
 (2, 'Linde Oxygen Cylinder Price in Bangladesh', 2, 20500, 'oxy1.jpg'),
 (3, 'Portable Oxygen Can Price in BD', 2, 1500, 'oxy2.jpg'),
 (4, ' Folee Oxygen Concentrator Price in Bangladesh', 1, 92000, 'fol.jpg'),
-(5, '10 Liter Dynmed Oxygen Concentrator Price in Bangladesh', 1, 82000, 'dyn.jpg');
+(5, '10 Liter Dynmed Oxygen Concentrator Price in Bangladesh', 2, 82000, 'dyn.jpg');
 
 -- --------------------------------------------------------
 
@@ -232,16 +232,17 @@ INSERT INTO `cylinder` (`cylinder_id`, `name`, `cylinder_type`, `cylinder_price`
 
 CREATE TABLE `cylinder_type` (
   `type_id` int(11) NOT NULL,
-  `cylinder_name` varchar(200) NOT NULL
+  `cylinder_name` varchar(200) NOT NULL,
+  `seller_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cylinder_type`
 --
 
-INSERT INTO `cylinder_type` (`type_id`, `cylinder_name`) VALUES
-(1, 'Oxygen concentrator'),
-(2, 'Oxygen Cylinder');
+INSERT INTO `cylinder_type` (`type_id`, `cylinder_name`, `seller_id`) VALUES
+(1, 'Oxygen concentrator', 1),
+(2, 'Oxygen Cylinder', 1);
 
 -- --------------------------------------------------------
 
@@ -361,7 +362,9 @@ INSERT INTO `medicine` (`medi_id`, `name`, `unit`, `image`, `indredi`, `company`
 (1, '1stCef', '500mg', 'medi1.jfif', 'Cefadroxil Monohydrate', 'Medimet Phaarmaceuticals Ltd', 35, 1),
 (2, 'efdfdfd', '500mg', 'medi2.jpg\r\n', 'roxil hydrate', 'met ceuticals Ltd', 50, 2),
 (3, 'Rtyuef', '700mg', 'medi3.jpg\r\n', 'Coxil Rate', 'Dimet Eicals Ltd', 40, 1),
-(4, 'tyraet', '900mg', 'medi4.jpg\r\n', 'Weroxil Werhydrate', 'Euticals Ltd', 50, 2);
+(4, 'tyraet', '900mg', 'medi4.jpg\r\n', 'Weroxil Werhydrate', 'Euticals Ltd', 50, 2),
+(5, 'fdhdf', 'unuit', 'ce53eeb5eb.png', 'era', 'sql', 12, 1),
+(6, 'fdhdf', 'unuit', '69946c7248.png', 'era', 'sql', 13, 1);
 
 -- --------------------------------------------------------
 
@@ -412,16 +415,17 @@ INSERT INTO `orders` (`order_id`, `product_id`, `quantity`, `cmr_id`, `price`, `
 
 CREATE TABLE `pharmacy` (
   `phar_id` int(11) NOT NULL,
-  `phar_name` varchar(200) NOT NULL
+  `phar_name` varchar(200) NOT NULL,
+  `seller_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pharmacy`
 --
 
-INSERT INTO `pharmacy` (`phar_id`, `phar_name`) VALUES
-(1, 'seriya'),
-(2, 'madrilihga');
+INSERT INTO `pharmacy` (`phar_id`, `phar_name`, `seller_id`) VALUES
+(1, 'seri', 1),
+(2, 'madrilihga', 2);
 
 -- --------------------------------------------------------
 
@@ -608,7 +612,7 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `cylinder`
 --
 ALTER TABLE `cylinder`
-  MODIFY `cylinder_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `cylinder_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `cylinder_type`
@@ -644,7 +648,7 @@ ALTER TABLE `locations`
 -- AUTO_INCREMENT for table `medicine`
 --
 ALTER TABLE `medicine`
-  MODIFY `medi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `medi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -656,7 +660,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `pharmacy`
 --
 ALTER TABLE `pharmacy`
-  MODIFY `phar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `phar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `sellers`

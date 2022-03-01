@@ -1,5 +1,26 @@
 <?php include "layout/seller_header.php"; ?>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<section>
+	<div class="row">
+		<div class="col-md-7 mx-auto">
+			<div class="row mt-3">
+				<div class="col-md-4">
+					<div class="bg-success p-3 h-100">
+						<h5 class="text-light">Oxygen List</h5>
+						<a href="oxygen.php" class="float-right pb-2 btn btn-info">View all</a>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="bg-info p-3 h-100">
+						<h5 class="text-light">Medicine List</h5>
+						<a href="medicine.php" class="float-right pb-2 btn btn-danger">View all</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<?php include "layout/seller_footer.php"; ?>
+

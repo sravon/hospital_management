@@ -29,7 +29,7 @@ class Seller
 		 		$value = $result->fetch_assoc();
 		 		if ($password == $value['password']) {
 		 			Session::set('sellerlogin',true);
-		 			Session::set('sellerId',$value['cus_id']);
+		 			Session::set('sellerId',$value['seller_id']);
 		 			Session::set('sellername',$value['f_name']);
 		 			Session::set('username',$value['username']);
 		 			Session::set('avadar',$value['avadar']);

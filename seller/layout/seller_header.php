@@ -4,10 +4,23 @@ ob_start();
    include_once ($filepath.'/../../helpers/Format.php');
    include_once ($filepath.'/../../lib/Session.php');
    include_once ($filepath.'/../../classes/User.php');
+   include_once ($filepath.'/../classes/Medicine.php');
+   include_once ($filepath.'/../classes/Oxygen.php');
    Session::init();
   
     $User = new User();
+    $Medicine = new Medicine();
+    $Oxygen = new Oxygen();
 ?>
+<?php 
+
+  if(isset($_GET['logout'])){
+
+    session_destroy();
+    header("Location: http://localhost/emedicare/");
+  }
+
+ ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -26,7 +39,7 @@ ob_start();
 <div class="sticky-top">
   <nav class="navbar bg-info navbar-light navbar-expand-sm" height="200" style="margin-top:-10px" >
       <div class="container">
-          <a href="home.php" class="navbar-brand d-flex" data-toggle="tooltip" title="E-Medicare">
+          <a href="http://localhost/emedicare/seller/" class="navbar-brand d-flex" data-toggle="tooltip" title="E-Medicare">
             <img class="img-fluid mx-auto deming" src="../images/unnamed.jpg" width="50">
             <h2>E-SEBA</h2>
           </a>
@@ -39,17 +52,18 @@ ob_start();
                    <li class="nav-item active middle_header">
                        <a href="home.php" class="nav-link"><span class="fa fa-home"></span> Home</a>
                    </li>
-                   <li class="nav-item active middle_header">
-                       <a href="medicine.php" class="nav-link"><span class="fa fa-plus-square p-1"></span>Medicine</a>
-                   </li>
+                    <li class="nav-item middle_header dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-plus-square p-1"></span>Medicine</a>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="medicine.php?source=add_pharmacy">Add Pharmacy</a>
+                          <a class="dropdown-item" href="medicine.php?source=add_medicine">Add Medicine</a>
+                        </div>
+                    </li>
                    <li class="nav-item active middle_header">
                        <a href="oxygen.php" class="nav-link"><span class="fa fa-plus-square p-1"></span>Oxygen</a>
                    </li>
             <?php
-				    	if (isset($_GET['logout'])) {
-			        	//$delid = $ct->delCustomerCart();
-			        	Session::destroy();
-			     		}
+				    	
 
 				    	$login = Session::get('sellerlogin');
 				    	if ($login) {
@@ -77,7 +91,6 @@ ob_start();
       </div>
   </nav>
 </div>
-
 
 
 
