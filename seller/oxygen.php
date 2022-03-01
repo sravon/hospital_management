@@ -76,7 +76,9 @@
 				    <tr>
 				      <th scope="row"><?php echo $i; ?></th>
 				      <td><?php echo $value['name']; ?></td>
-				      <td><?php echo $value['img']; ?></td>
+				      <td>
+					  <img src="../images/<?php echo $value['img']; ?>" width="100" />
+					</td>
 				      <td><?php echo $value['cylinder_price']; ?>TK</td>
 				      <td><a href="edit_cylinder.php?cylinder_id=<?php echo $value['cylinder_id']; ?>" class="btn btn-primary">Edit</a></td>
 				      <td><a href="?delete_cylinder=<?php echo $value['cylinder_id']; ?>" class="btn btn-danger">Delete</a></td>

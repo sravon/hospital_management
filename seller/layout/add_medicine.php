@@ -81,7 +81,8 @@
 				      <th scope="row"><?php echo $i; ?></th>
 				      <td><?php echo $value['name']; ?></td>
 				      <td><?php echo $value['unit']; ?></td>
-				      <td><?php echo $value['image']; ?></td>
+				      <td>
+						  <img src="../images/<?php echo $value['image']; ?>" width="100" alt=""></td>
 				      <td><?php echo $value['indredi']; ?></td>
 				      <td><?php echo $value['company']; ?></td>
 				      <td><?php echo $value['price']; ?>TK</td>
