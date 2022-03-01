@@ -50,7 +50,7 @@ ob_start();
              <span class="mr-auto"></span>
               <ul class="navbar-nav">
                    <li class="nav-item active middle_header">
-                       <a href="home.php" class="nav-link"><span class="fa fa-home"></span> Home</a>
+                       <a href="index.php" class="nav-link"><span class="fa fa-home"></span> Home</a>
                    </li>
                     <li class="nav-item middle_header dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-plus-square p-1"></span>Medicine</a>
