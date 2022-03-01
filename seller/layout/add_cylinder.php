@@ -10,8 +10,6 @@
 	<div class="row p-3">
 		<div class="col-md-6">
 			<h2 class="text-center text-primary p-4">Add cylinder
-				?>
-				
 			</h2>
 			<hr>
 			<div>
