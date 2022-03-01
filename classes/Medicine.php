@@ -65,7 +65,7 @@ class Medicine
 	}
 
 	public function singlePharmacy($id){
-		$sql ="SELECT * FROM pharmacy WHERE phar_id='{$id}'";
+		$sql ="SELECT * FROM pharmacy WHERE seller_id='{$id}'";
 		$fetchAll = $this->db->select($sql);
 		return $fetchAll;
 	}

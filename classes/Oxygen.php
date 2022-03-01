@@ -25,6 +25,12 @@ class Oxygen
 		return $fetchAll;
 	}
 
+	public function addCylinder($name,$seller){
+		$sql ="INSERT INTO `cylinder_type`(`cylinder_name`, `seller_id`) VALUES ('{$name}','{$seller}')";
+		$fetchAll = $this->db->insert($sql);
+		return $fetchAll;
+	}
+
 	function getOxygenBySellerId($sellerid){
 		$sql ="SELECT * FROM `cylinder` JOIN `cylinder_type` ON cylinder.cylinder_type=cylinder_type.type_id WHERE cylinder_type.seller_id='{$sellerid}'";
 		$fetchAll = $this->db->select($sql);
@@ -68,6 +74,12 @@ class Oxygen
 
 	public function singleOxygen($id){
 		$sql ="SELECT * FROM cylinder WHERE cylinder_id='{$id}'";
+		$fetchAll = $this->db->select($sql);
+		return $fetchAll;
+	}
+
+	public function singlecylinder($id){
+		$sql ="SELECT * FROM cylinder_type WHERE seller_id='{$id}'";
 		$fetchAll = $this->db->select($sql);
 		return $fetchAll;
 	}

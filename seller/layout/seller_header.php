@@ -59,6 +59,9 @@ ob_start();
                           <a class="dropdown-item" href="medicine.php?source=add_medicine">Add Medicine</a>
                         </div>
                     </li>
+                    <li class="nav-item active middle_header">
+                       <a href="cylinder.php?source=add_cylinder" class="nav-link"><span class="fa fa-plus-square p-1"></span>Cylinder</a>
+                   </li>
                    <li class="nav-item active middle_header">
                        <a href="oxygen.php" class="nav-link"><span class="fa fa-plus-square p-1"></span>Oxygen</a>
                    </li>

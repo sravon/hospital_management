@@ -31,7 +31,7 @@
 						<select class="form-control" name="pharmacy">
 							<option value="">Select Options</option>
 						<?php 
-							$result = $Oxygen->allCylinder(); 
+							$result = $Oxygen->singlecylinder($_SESSION['sellerId']); 
 							if($result){
 								$i = 0;
 								while($value = $result->fetch_assoc()){
