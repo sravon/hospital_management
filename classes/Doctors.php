@@ -12,6 +12,82 @@ class Doctors
 		$this->db = new Database();
 		$this->fm = new Format();
 	}
+
+	public function allDoctor(){
+		$sql ="SELECT * FROM doctors";
+
+		$fetchAll = $this->db->select($sql);
+		 return $fetchAll;
+	}
+
+	public function singleDoctor($id){
+		$sql ="SELECT * FROM `doctors` WHERE doc_id='{$id}'";
+
+		$fetchAll = $this->db->select($sql);
+		 return $fetchAll;
+	}
+
+	function addDoctor($data,$picture){
+		$permited  = array('jpg', 'jpeg', 'png', 'gif');
+		$file_name = $picture['image']['name'];
+		$file_size = $picture['image']['size'];
+		$file_temp = $picture['image']['tmp_name'];
+
+		$div = explode('.', $file_name);
+		$file_ext = strtolower(end($div));
+		$unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
+		$uploaded_image = "../images/".$unique_image;
+		$msg = "";
+		if ($file_size >1048567) {
+		    $msg = "Image Size should be less then 1MB!";
+		} elseif (in_array($file_ext, $permited) === false) {
+		    $msg = "You can upload only:-".implode(', ', $permited);
+		} else{
+		    move_uploaded_file($file_temp, $uploaded_image);
+		    $query = "INSERT INTO `doctors`(`doc_name`, `dept_id`, `doc_image`, `time`, `doc_qualification`) VALUES ('{$data['doc_name']}','{$data['dept']}','{$unique_image}','{$data['time']}','{$data['doc_qualification']}')";
+		    $inserted_rows = $this->db->insert($query);
+		    if ($inserted_rows) {
+		        $msg = "Added Successfully";
+		    }else {
+		        $msg = "Added Failed";
+		    }
+		}
+		return $msg;
+	}
+
+	public function deleteDoctor($id){
+		$sql ="DELETE FROM `doctors` WHERE doc_id='{$id}'";
+		$fetchAll = $this->db->delete($sql);
+		return $fetchAll;
+	}
+
+	function editDoctor($data,$picture,$id){
+		$permited  = array('jpg', 'jpeg', 'png', 'gif');
+		$file_name = $picture['image']['name'];
+		$file_size = $picture['image']['size'];
+		$file_temp = $picture['image']['tmp_name'];
+
+		$div = explode('.', $file_name);
+		$file_ext = strtolower(end($div));
+		$unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
+		$uploaded_image = "../images/".$unique_image;
+		$msg = "";
+		if ($file_size >1048567) {
+		    $msg = "Image Size should be less then 1MB!";
+		} elseif (in_array($file_ext, $permited) === false) {
+		    $msg = "You can upload only:-".implode(', ', $permited);
+		} else{
+		    move_uploaded_file($file_temp, $uploaded_image);
+		    $query = "UPDATE `doctors` SET `doc_name`='{$data['doc_name']}',`dept_id`='{$data['dept']}',`doc_image`='{$unique_image}',`time`='{$data['time']}',`doc_qualification`='{$data['doc_qualification']}' WHERE doc_id='{$id}'";
+		    $inserted_rows = $this->db->update($query);
+		    if ($inserted_rows) {
+		        $msg = "Updated Successfully";
+		    }else {
+		        $msg = "Updated Failed";
+		    }
+		}
+		return $msg;
+	}
 	
 	public function allDept(){
 		$sql ='SELECT * FROM departments';

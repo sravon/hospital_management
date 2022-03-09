@@ -13,6 +13,7 @@ ob_start();
   $User = new User();
   $Medicine = new Medicine();
   $Doctors = new Doctors();
+  $Hospital = new Hospital();
   $Order = new Order();
 ?>
 <!doctype html>
@@ -31,7 +32,7 @@ ob_start();
 
 	if(isset($_GET['logout'])){
 		session_destroy();
-		header("Location: http://localhost/sifat/adminlog.php");
+		header("Location: http://localhost/emedicare/adminlog.php");
 	}
 
  ?>
@@ -44,32 +45,24 @@ ob_start();
 		<ul class="lisst-unstyled components">
 			<p>Role : admin</p>
 			<li class="active">
-				<a href="#homesubmenu" data-toggle="collapse">home</a>
+				<a href="/index.php" data-toggle="collapse">home</a>
 			</li>
 			<li >
 				<a href="#pdfmenu" data-toggle="collapse" arial-expanded="false" class="dropdown-toggle text-muted"><i class="fa fa-align-left "></i>Doctors</a>
 				<ul class="collapse lisst-unstyled" id="pdfmenu">
 					<li>
-						<a href="#"><i class="fa fa-align-left"></i>View All question</a>
+						<a href="doctors.php"><i class="fa fa-align-left"></i>View All question</a>
 					</li>
 					<li>
-						<a href="#">Add Doctors</a>
+						<a href="doctors.php?type=add_doctors">Add Doctors</a>
 					</li>
 				</ul>
 			</li>
 			<li>
-				<a href="#" class="text-muted"><i class="fa fa-align-left"></i>About</a>
+				<a href="location.php" class="text-muted"><i class="fa fa-align-left"></i>Location</a>
 			</li>
-			<li >
-				<a href="#pageSubmenu" data-toggle="collapse" arial-expanded="false" class="dropdown-toggle text-muted">Pages</a>
-				<ul class="collapse lisst-unstyled" id="pageSubmenu">
-					<li>
-						<a href="#">Page 1</a>
-					</li>
-					<li>
-						<a href="#">Page 2</a>
-					</li>
-				</ul>
+			<li>
+				<a href="hospital.php" class="text-muted"><i class="fa fa-align-left"></i>Hospital</a>
 			</li>
 		</ul>
 	</nav>
