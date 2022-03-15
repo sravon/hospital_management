@@ -65,6 +65,28 @@
       });
      }
 
+     /// Oxygen
+    $('#search_oxygen').change(function(){
+      
+      var txt = $(this).val();
+      if (txt != '') {
+        load_oxygenByseller(txt);
+      }
+    });
+
+    function load_oxygenByseller(txt)
+     {
+      $.ajax({
+       url:"ajax/oxygenByseller.php",
+       method:"POST",
+       data:{txt:txt},
+       success:function(data)
+       {
+        $('#resultOxygen').html(data);
+       }
+      });
+     }
+
 	})
 </script>
   </body>

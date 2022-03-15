@@ -1,7 +1,7 @@
 <?php include "inc/header.php";
-	if (isset($_GET['deletelocation'])) {
-		$Hospital->deleteLocations($_GET['deletelocation']);
-		header("Location: location.php");
+	if (isset($_GET['deletemedi'])) {
+		$Medicine->deleteMedicine($_GET['deletemedi']);
+		header("Location: pharmacy.php");
 	} 
 	
  ?>
@@ -29,8 +29,10 @@
 							    <tr>
 							      <th scope="col">#</th>
 							      <th scope="col">Pharmacy Name</th>
-							      <th scope="col">Seller Name</th>
-							      <th scope="col">Seller Email</th>
+							      <th scope="col">Medicine Name</th>
+							      <th scope="col">Image</th>
+							      <th scope="col">company</th>
+							      <th scope="col">price</th>
 							    </tr>
 							  </thead>
 							  <tbody id="resultSeller">

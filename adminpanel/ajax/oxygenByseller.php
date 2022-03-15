@@ -1,9 +1,9 @@
 <?php 
 	$connect = mysqli_connect("localhost","root","","cse499");
 	if (isset($_POST['txt'])) {
-		$sql = "SELECT * FROM pharmacy join sellers 
-		on pharmacy.seller_id=sellers.seller_id 
-		join medicine on pharmacy.phar_id = medicine.phar_id WHERE pharmacy.seller_id = '".$_POST['txt']."'";
+		$sql = "SELECT * FROM cylinder_type join sellers 
+		on cylinder_type.seller_id=sellers.seller_id 
+		join cylinder on cylinder.cylinder_type = cylinder_type.type_id WHERE cylinder_type.seller_id = '".$_POST['txt']."'";
 		
 	}
 	$result = mysqli_query($connect, $sql);
@@ -14,12 +14,11 @@
 			$i++;
 			$output .='<tr>
 						<td>'.$i.'</td>
-						<td>'.$row['phar_name'].'</td>
+						<td>'.$row['cylinder_name'].'</td>
 						<td>'.$row['name'].'</td>
-						<td>'.$row['image'].'</td>
-						<td>'.$row['company'].'</td>
-						<td>'.$row['price'].'TK</td>
-						<td><a href="?deletemedi='.$row['medi_id'].'" class="btn btn-danger">Delete</a></td>
+						<td>'.$row['img'].'</td>
+						<td>'.$row['cylinder_price'].'TK</td>
+						<td><a href="?deletecylinder='.$row['cylinder_id'].'" class="btn btn-danger">Delete</a></td>
 					</tr>';
 		}
 		
