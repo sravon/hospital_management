@@ -58,8 +58,10 @@ class Medicine
 		return $fetchAll;
 	}
 
+	//
+
 	public function allPharmacy(){
-		$sql ='SELECT * FROM pharmacy';
+		$sql ='SELECT * FROM `pharmacy` join sellers ON sellers.seller_id= pharmacy.seller_id';
 		$fetchAll = $this->db->select($sql);
 		return $fetchAll;
 	}

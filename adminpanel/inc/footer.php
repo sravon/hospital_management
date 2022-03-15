@@ -42,6 +42,29 @@
       appoitmentAjax(apt_id,status)
     })
 
+
+    /// pharmacy
+    $('#search_seller').change(function(){
+      
+      var txt = $(this).val();
+      if (txt != '') {
+        load_sellerpharmacy(txt);
+      }
+    });
+
+    function load_sellerpharmacy(txt)
+     {
+      $.ajax({
+       url:"ajax/sellerByName.php",
+       method:"POST",
+       data:{txt:txt},
+       success:function(data)
+       {
+        $('#resultSeller').html(data);
+       }
+      });
+     }
+
 	})
 </script>
   </body>

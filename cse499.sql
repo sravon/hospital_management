@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 01, 2022 at 05:40 PM
+-- Generation Time: Mar 15, 2022 at 06:10 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.26
 
@@ -242,7 +242,9 @@ CREATE TABLE `cylinder_type` (
 
 INSERT INTO `cylinder_type` (`type_id`, `cylinder_name`, `seller_id`) VALUES
 (1, 'Oxygen concentrator', 1),
-(2, 'Oxygen Cylinder', 1);
+(2, 'Oxygen Cylinder', 4),
+(3, 'cyli', 4),
+(4, 'swert', 5);
 
 -- --------------------------------------------------------
 
@@ -289,9 +291,9 @@ CREATE TABLE `doctors` (
 --
 
 INSERT INTO `doctors` (`doc_id`, `doc_name`, `dept_id`, `doc_image`, `time`, `doc_qualification`) VALUES
-(1, 'abdur Rahman Kazi', '1', 'doc1.png', '10.00pm-12.00am', 'Mbbs,Fcc,Dcc'),
+(1, 'abdur Rahman Kazi', '1', 'c2ffc32722.png', '10.00pm-12.00am', 'Mbbs,Fcc,Dcccccccccc'),
 (2, 'shrabon rudra', '2', 'doc2.jpg', '11.00pm-12.00am', 'Fcc,Dcc'),
-(3, 'fahim sikder', '3', 'doc3.jpg', '1.00pm-3.00am', 'Mbbs,Fcc,Dcc,rdd'),
+(3, 'fahim sikder', '3', '35fa56c0af.png', '1.00pm-3.00am', 'Mbbs,Fcc,Dcc,rdd'),
 (4, 'sifat khan', '4', 'doc4.jpg', '3.00pm-3.00am', 'Fcc,Dcc,kll'),
 (5, 'auntor sheikh', '1', 'doc1.png', '10.00pm-12.00am', 'Mbbs,Fcc,Dcc');
 
@@ -316,7 +318,8 @@ INSERT INTO `hospitals` (`hos_id`, `hos_name`, `loca_id`, `image`) VALUES
 (1, 'sql hospitals', 1, 'amu1.jpg'),
 (2, 'werti hospitals', 1, 'amu2.jpg'),
 (3, 'bmw hospitals', 2, 'amu3.jpg'),
-(4, 'cbr hospitals', 2, 'amu4.jpg');
+(4, 'cbr hospitalsssssssss', 1, 'd2fb59cc71.png'),
+(6, 'eee ospitals', 1, 'a792da3d01.png');
 
 -- --------------------------------------------------------
 
@@ -335,7 +338,8 @@ CREATE TABLE `locations` (
 
 INSERT INTO `locations` (`loc_id`, `loc_name`) VALUES
 (1, 'dhaka'),
-(2, 'gazipur');
+(2, 'gazipurfgfg'),
+(5, 'gazipur');
 
 -- --------------------------------------------------------
 
@@ -364,7 +368,8 @@ INSERT INTO `medicine` (`medi_id`, `name`, `unit`, `image`, `indredi`, `company`
 (3, 'Rtyuef', '700mg', 'medi3.jpg\r\n', 'Coxil Rate', 'Dimet Eicals Ltd', 40, 1),
 (4, 'tyraet', '900mg', 'medi4.jpg\r\n', 'Weroxil Werhydrate', 'Euticals Ltd', 50, 2),
 (5, 'fdhdf', 'unuit', 'ce53eeb5eb.png', 'era', 'sql', 12, 1),
-(6, 'fdhdf', 'unuit', '69946c7248.png', 'era', 'sql', 13, 1);
+(6, 'fdhdf', 'unuit', '69946c7248.png', 'era', 'sql', 13, 1),
+(8, 'fdhdf', 'unuit', '954e3046d6.png', 'era', 'sql', 820, 9);
 
 -- --------------------------------------------------------
 
@@ -425,7 +430,10 @@ CREATE TABLE `pharmacy` (
 
 INSERT INTO `pharmacy` (`phar_id`, `phar_name`, `seller_id`) VALUES
 (1, 'seri', 1),
-(2, 'madrilihga', 2);
+(2, 'madrilihga', 2),
+(7, 'dsgfdsf', 1),
+(8, 'dfdsfs', 4),
+(9, 'ss', 4);
 
 -- --------------------------------------------------------
 
@@ -450,8 +458,9 @@ CREATE TABLE `sellers` (
 --
 
 INSERT INTO `sellers` (`seller_id`, `f_name`, `l_name`, `avadar`, `email`, `username`, `gender`, `phone`, `password`) VALUES
-(1, 'abdur rahman', 'abdur rahman', '', 'kaziar42@gmail.com', 'kaziar42@gmail.com', 'm', '01834920142', '12345678'),
-(3, 'abdur rahman', 'abdur rahman', '', 'ami@gmail.com', 'kazi@gmail.com', 'm', '56436tytry', '12345678');
+(1, 'abdur', 'Rahman', '', 'kaziar42@gmail.com', 'kaziar42@gmail.com', 'm', '01834920142', '12345678'),
+(3, 'jakir', 'malton', '', 'ami@gmail.com', 'kazi@gmail.com', 'm', '01521210824', '12345678'),
+(4, 'walton', 'devid', '', 'arr@gmail.com', 'arr@gmail.com', 'm', '01356950134', '123456');
 
 --
 -- Indexes for dumped tables
@@ -612,13 +621,13 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `cylinder`
 --
 ALTER TABLE `cylinder`
-  MODIFY `cylinder_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `cylinder_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `cylinder_type`
 --
 ALTER TABLE `cylinder_type`
-  MODIFY `type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `departments`
@@ -630,25 +639,25 @@ ALTER TABLE `departments`
 -- AUTO_INCREMENT for table `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `doc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `doc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `hospitals`
 --
 ALTER TABLE `hospitals`
-  MODIFY `hos_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `hos_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `locations`
 --
 ALTER TABLE `locations`
-  MODIFY `loc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `loc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `medicine`
 --
 ALTER TABLE `medicine`
-  MODIFY `medi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `medi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -660,13 +669,13 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `pharmacy`
 --
 ALTER TABLE `pharmacy`
-  MODIFY `phar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `phar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `sellers`
 --
 ALTER TABLE `sellers`
-  MODIFY `seller_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `seller_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

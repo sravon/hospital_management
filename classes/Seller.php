@@ -12,6 +12,12 @@ class Seller
 		$this->db = new Database();
 		$this->fm = new Format();
 	}
+
+	public function allSeller(){
+		$sql ='SELECT * FROM `sellers`';
+		$fetchAll = $this->db->select($sql);
+		return $fetchAll;
+	}
 	
 	public function sellerLogin($data){
 		$email = $this->fm->validation($data['email']);
@@ -75,6 +81,12 @@ class Seller
 		 	}	
 		}
 		return $loginmsg;
+	}
+
+	public function deleteSeller($id){
+		$sql ="DELETE FROM `sellers` WHERE seller_id='{$id}'";
+		$fetchAll = $this->db->delete($sql);
+		return $fetchAll;
 	}
 
 }

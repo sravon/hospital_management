@@ -1,4 +1,4 @@
-
+ 
 <?php 
 ob_start();
    $filepath = realpath(dirname(__FILE__));
@@ -11,9 +11,11 @@ ob_start();
      $ssid = session_id();
   $Menu = new Menu();
   $User = new User();
+  $Seller = new Seller();
   $Medicine = new Medicine();
   $Doctors = new Doctors();
   $Hospital = new Hospital();
+  $Oxygen = new Oxygen();
   $Order = new Order();
 ?>
 <!doctype html>
@@ -63,6 +65,18 @@ ob_start();
 			</li>
 			<li>
 				<a href="hospital.php" class="text-muted"><i class="fa fa-align-left"></i>Hospital</a>
+			</li>
+			<li>
+				<a href="pharmacy.php" class="text-muted"><i class="fa fa-align-left"></i>Pharmacy</a>
+			</li>\
+			<li>
+				<a href="apointment.php" class="text-muted"><i class="fa fa-align-left"></i>ApointMent</a>
+			</li>
+			<li>
+				<a href="oxygen.php" class="text-muted"><i class="fa fa-align-left"></i>Oxygen</a>
+			</li>
+			<li>
+				<a href="seller.php" class="text-muted"><i class="fa fa-align-left"></i>Seller</a>
 			</li>
 		</ul>
 	</nav>
