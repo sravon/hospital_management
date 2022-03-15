@@ -67,10 +67,10 @@ ob_start();
 				<a href="hospital.php" class="text-muted"><i class="fa fa-align-left"></i>Hospital</a>
 			</li>
 			<li>
-				<a href="pharmacy.php" class="text-muted"><i class="fa fa-align-left"></i>Pharmacy</a>
-			</li>\
-			<li>
 				<a href="apointment.php" class="text-muted"><i class="fa fa-align-left"></i>ApointMent</a>
+			</li>
+			<li>
+				<a href="pharmacy.php" class="text-muted"><i class="fa fa-align-left"></i>Pharmacy</a>
 			</li>
 			<li>
 				<a href="oxygen.php" class="text-muted"><i class="fa fa-align-left"></i>Oxygen</a>
