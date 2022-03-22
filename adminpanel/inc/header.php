@@ -58,6 +58,9 @@ ob_start();
 					<li>
 						<a href="doctors.php?type=add_doctors">Add Doctors</a>
 					</li>
+					<li>
+						<a href="department.php">Department</a>
+					</li>
 				</ul>
 			</li>
 			<li>
