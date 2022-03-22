@@ -94,6 +94,37 @@ class Doctors
 		$fetchAll = $this->db->select($sql);
 		return $fetchAll;
 	}
+	public function addDept($data){
+		$sql ="INSERT INTO `departments`(`dept_name`) VALUES ('{$data['dept_name']}')";
+		$inserted_rows = $this->db->insert($query);
+		    if ($inserted_rows) {
+		        $msg = "Added Successfully";
+		    }
+		return $msg;
+	}
+	public function singleDept($id){
+		$sql ="SELECT * FROM departments Where dept_id='{$id}'";
+
+		$fetchAll = $this->db->select($sql);
+		 return $fetchAll;
+	}
+	public function editDept($data,$id){
+		$query = "UPDATE `departments` SET `dept_name`='{$data['name']}' WHERE `dept_id`='{$id}'";
+		    $inserted_rows = $this->db->update($query);
+		    if ($inserted_rows) {
+		        $msg = "Updated Successfully";
+		    }else {
+		        $msg = "Updated Failed";
+		    }
+		return $msg;
+	}
+
+	public function deleteDept($id){
+		$sql ="DELETE FROM `departments` WHERE dept_id='{$id}'";
+		$fetchAll = $this->db->delete($sql);
+		return $fetchAll;
+	}
+	//================
 
 	public function doctorbyDept($id){
 		$sql ="SELECT * FROM doctors Where dept_id='{$id}'";

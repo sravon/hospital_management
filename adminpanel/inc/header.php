@@ -27,7 +27,7 @@ ob_start();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <title>Hello, world!</title>
+    <title>admin Panel</title>
   </head>
  <body>
 <?php
@@ -93,7 +93,8 @@ ob_start();
 				          <img class="nav-user-photo rounded-circle" width="50" src="../images/pp.jpg">
 				        </button>
 				        <div class="dropdown-menu bg-secondary" aria-labelledby="dropdownMenuButton" style="position: absolute;left: -90px">
-				          <a class="dropdown-item position-relative" href="logout/">profile</a>
+				          <a class="dropdown-item position-relative" href="profile.php">profile</a>
+				          <a class="dropdown-item position-relative" href="order.php">Order</a>
 				          <a class="dropdown-item position-relative" href="?logout">Logout</a>
 				        </div>
 				      </div>

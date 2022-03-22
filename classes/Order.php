@@ -37,6 +37,12 @@ class Order
 			$msg = 1;
 		}
 	}
+
+	function allOrder(){
+		$sql ="SELECT * FROM medicine JOIN orders ON orders.product_id = medicine.medi_id WHERE orders.product_type=0 limit 6";
+		$fetchAll = $this->db->select($sql);
+		return $fetchAll;
+	}
 }
 
 ?>
